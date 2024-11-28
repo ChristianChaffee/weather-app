@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;700&family=Lora:wght@400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    <div class="main-container" id="main-container-id">
+        <div class="list-container">
+            <div class="left-items">
+                <div class="account-button" id="account-button-id">
+                    <img src="./assets/noname_account.jpg"/>
+                </div>
+                <div class="menu-button" id="menu-button-id">
+                    <img src="./assets/menu.png"/>
+                </div>
+                <div class="settings-button" id="settings-button-id">
+                    <img src="./assets/settings.png"/>
+                </div>
+            </div>
+            <div class="right-items">
+                <div class="collapse-button" id="collapse-button-id">
+                    <img src="./assets/collapse.png"/>
+                </div>
+                <div class="exit-button" id="exit-button-id">
+                    <img src="./assets/exit.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="city-container" id="city-container-id">
+            <input class="city-input-field" id="city-input-field-id" placeholder="Введите город">
+            <div class="find-city-button" id="find-city-button-id">Найти</div>
+        </div>
+        <div class="weather-container" id="weather-container-id">
+            <div class="air-pollution-container">
+                <img class="air-pollution-icon-img" src="./assets/air_pollution_icon.png"/>
+                <label class="air-pollution-label">Качество воздуха</label>
+                <label class="air-pollution-state-label" id="air-pollution-state-label-id">Нормальное</label>
+                <div class="air-pollution-other-info-container" id="air-pollution-other-info-container-id">
+                    <label id="co-label">CO: 201.15 μg/m<sup>3</sup></label>
+                    <label id="no-label">NO: 201.15 μg/m<sup>3</sup></label>
+                    <label id="no2-label">NO<sub>2</sub>: 201.15 μg/m<sup>3</sup></label>
+                    <label id="o3-label">O<sub>3</sub>: 201.15 μg/m<sup>3</sup></label>
+                    <label id="so2-label">SO<sub>2</sub>: 201.15 μg/m<sup>3</sup></label>
+                    <label id="pm25-label">PM<sub>2.5</sub>: 201.15 μg/m<sup>3</sup></label>
+                </div>
+            </div>
+            <div class="today-weather-container">
+                <img class="weather-icon-img" id="weather-icon-img-id" src="./assets/50n.png"/>
+                <label class="today-weather-city" id="today-weather-city-id">Загрузка...</label>
+                <label class="today-weather-temperature" id="today-weather-temperature-id">+7 °C</label>
+                <label class="today-weather-feels-like-temperature" id="today-weather-feels-like-temperature-id">Ощущается как: +4 °C</label>
+                <div class="today-weather-other-info-container">
+                    <div class="today-weather-wind-speed">
+                        <img src="./assets/wind.png"/>
+                        <label id="today-wind-speed-id">32 м/с</label>
+                    </div>
+                    <div class="today-weather-humidity-speed">
+                        <img src="./assets/humidity.png"/>
+                        <label id="today-humidity-id">82%</label>
+                    </div>
+                    <div class="today-weather-sunrise">
+                        <img src="./assets/sunrise.png"/>
+                        <label id="today-sunrise-id">Восход</label>
+                    </div>
+                    <div class="today-weather-sunset">
+                        <img src="./assets/sunset.png"/>
+                        <label id="today-sunset-id">Восход</label>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast-weather-container" id="forecast-weather-container-id">
+                <label>Прогноз погоды</label>
+                <label>на 5 дней</label>
+                <div class="five-days-list-container" id="five-days-list-container-id">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="registration-main-container" id="registration-main-container-id">
+        <div class="registration-container">
+            <div class="registration-head-container">
+                <label class="registration-head-container-text" id="registration-head-container-text-id">Регистрация</label>
+                <img src="./assets/exit.png" id="account-exit-button-id" />
+            </div>
+            <div class="input-fields-container">
+                <input class="email-input" placeholder="E-Mail" id="email-input-id">
+                <label class="email-error" id="email-error-id">* Вы некорректно ввели E-Mail</label>
+                <input class="password-input" placeholder="Пароль" id="password-input-id">
+                <label class="password-error" id="password-error-id">* Вы некорректно ввели пароль</label>
+            </div>
+            <div class="button-account-container">
+                <div class="main-account-button" id="main-account-button-id">Регистрация</div>
+                <label class="account-text-link-label" id="account-text-link-label-id">У Вас уже есть аккаунт? <a href="test" class="account-text-link" id="account-text-link-id">Авторизация</a></label>
+            </div>
+        </div>
+        <div class="registration-success-container" id = 'registration-success-container-id' style="display: none;">
+            <img src="./assets/success.png" />
+            <label id="thank-login-label-id">Спасибо за регистрацию!</label>
+        </div>
+    </div>
+
+    <div class="account-menu-main-container" id="account-menu-main-container-id">
+        <div class="account-menu-container" id = 'account-menu-container-id'>
+            <img src="./assets/noname_account.jpg" />
+            <label class="account-menu-email-label" id="account-menu-email-label-id">email</label>
+            <div class="account-settings-buttons-container">
+                <div class="account-settings-button" id="account-settings-button-info-id">Информация об аккаунте</div>
+                <div class="account-settings-button" id="account-settings-button-exit-id">Выйти из аккаунта</div>
+                <div class="account-settings-button" id="account-settings-button-close-id">Закрыть настройки аккаунта</div>
+            </div>
+        </div>
+        <div class="account-info-container" id="account-info-container-id">
+            <div class="account-info-head-container">
+                <img src="./assets/exit.png" id="account-info-exit-button-id"/>
+            </div>
+            <label class="account-info-label" id="account-info-label-email-id">Эл. Почта:</label>
+            <label class="account-info-label" id="account-info-label-time-id">Дата и время создания аккаунта:</label>
+        </div>
+    </div>
+
+    <div class="settings-main-container" id="settings-main-container-id" style="display: none;">
+        <div class="settings-container">
+            <div class="settings-header">
+                Настройки
+                <img src="./assets/exit.png" id="settings-exit-button-id"/>
+            </div>
+            <div class="settings-buttons-container">
+                Разрешение экрана приложения
+                <div class="settings-screen-resolution-container">
+                    <img src="./assets/arrow_left.png" id="settings-screen-resolution-left-id">
+                    <div class="settings-screen-resolution-button" id="settings-screen-resolution-button-id">100x100</div>
+                    <img src="./assets/arrow_right.png" id="settings-screen-resolution-right-id">
+                </div>
+                <div class="settings-reset-button" id="settings-reset-button-id">Сброс настроек</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-main-container" id="menu-main-container-id" style="display: none;">
+        <div class="menu-container">
+            <div class="menu-button-exit" id="menu-button-exit-id"><img src="./assets/exit.png" /></div>
+            <div class="menu-button-list" id="menu-button-moon-id"><label>Лунный календарь</label></div>
+            <div class="menu-button-list" id="menu-button-travel-id"><label>Календарь путешественника</label></div>
+        </div>
+    </div>
+
+    <div class="moon-main-container" id="moon-main-container-id" style="display: none;">
+        <div class="moon-container" id="moon-container-id">
+            <div class="moon-date" id="moon-date-id">Загрузка...</div>
+            <div class="moon-info" id="moon-phase-id">Загрузка...</div>
+            <div class="moon-info" id="moon-day-characteristics-id">Загрузка...</div>
+            <div class="moon-info" id="moon-impact-on-personality-id">Загрузка...</div>
+        </div>
+    </div>
+
+    <div class="day-of-cities-main-container" id="day-of-cities-main-container-id" style="display: none;">
+        <div class="day-of-cities-container" id="day-of-cities-container-id">
+            
+        </div>
+    </div>
+
+    <div class="notification-main-container" id="notification-main-container-id"></div>
+
+    <script src='render.js'></script>
+</body>
+</html>

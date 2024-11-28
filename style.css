@@ -1,0 +1,816 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-app-region: drag;
+}
+
+img {
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+}
+
+.main-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #5380c9;
+    -webkit-app-region: drag;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+}
+
+.left-items, .right-items{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    user-select: none;
+}
+
+.left-items{
+    justify-content: start;
+}
+
+.right-items{
+    justify-content: end;
+}
+
+.account-button, .menu-button, .settings-button, .exit-button, .collapse-button{
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.account-button img, .menu-button img, .settings-button img, .exit-button img, .collapse-button img{
+    width: 100%;
+    height: 100%;
+    filter: blur(0px);
+    border-radius: 50%;
+}
+
+.account-button:hover, .menu-button:hover, .settings-button:hover, .exit-button:hover, .collapse-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.registration-main-container{
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-container, .registration-success-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 50%;
+    height: 50%;
+    background-color: #29579f;
+    box-sizing: border-box;
+    -webkit-app-region: no-drag;
+}
+
+.registration-head-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 20%;
+}
+
+.registration-head-container img{
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.registration-head-container img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.registration-head-container-text{
+    user-select: none;
+    margin-left: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.input-fields-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.email-input, .password-input{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    min-height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.email-error, .password-error{
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+    user-select: none;
+    display: none;
+}
+
+.button-account-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main-account-button{
+    display: flex;
+    background-color: #3fb55f;
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+}
+
+.main-account-button:hover{
+    transform: scale(1.1);
+    background-color: #308647;
+    cursor: pointer;
+}
+
+.account-text-link-label{
+    color: white;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.account-text-link{
+    color: white;
+    font-weight: bold;
+}
+
+.registration-success-container{
+    align-items: center;
+    justify-content: center;
+    color: #8bc34a;
+    font-size: 30px;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.registration-success-container img{
+    width: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.registration-success-container:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.account-menu-main-container{
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-menu-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #29579f;
+    width: 50%;
+    height: 70%;
+    border-radius: 15px;
+    padding: 10px;
+    -webkit-app-region: no-drag;
+}
+
+.account-menu-container img{
+    display: flex;
+    height: 30%;
+    width: 33%;
+    border-radius: 50%;
+}
+
+.account-menu-email-label{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    user-select: none;
+}
+
+.account-settings-buttons-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white;
+    user-select: none;
+}
+
+.account-settings-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+    background-color: #5380c9;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.account-settings-button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.account-info-container{
+    user-select: none;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    min-width: 40%;
+    background-color: #5380c9;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.account-info-head-container{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 20%;
+}
+
+.account-info-head-container img{
+    margin: 5px;
+    max-height: 40px;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s ease;
+}
+
+.account-info-head-container img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.account-info-label{
+    display: flex;
+    flex-wrap: nowrap;
+    user-select: none;
+    color: white;
+    font-weight: 20px;
+    margin: 10px;
+}
+
+.notification-main-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.notification-container {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 20%;
+    height: auto;
+    user-select: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: opacity 0.5s ease;
+}
+
+.settings-main-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background-color: #29579f;
+    border-radius: 15px;
+    padding: 10px;
+    -webkit-app-region: no-drag;
+}
+
+.settings-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 25px;
+    user-select: none;
+}
+
+.settings-header img{
+    width: 7%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.settings-header img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.settings-buttons-container{
+    position: relative;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 17px;
+    padding-top: 10px;
+}
+
+.settings-screen-resolution-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.settings-screen-resolution-container img{
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s ease;
+}
+
+.settings-screen-resolution-container img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.settings-screen-resolution-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #5380c9;
+}
+
+.settings-reset-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    border-radius: 15px;
+    background-color: #5380c9;
+    transition: transform 0.3s ease;
+}
+
+.settings-reset-button:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.city-container{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: end;
+    align-items: center;
+}
+
+.city-input-field{
+    display: flex;
+    height: 60%;
+    width: 20%;
+    margin-right: 10px;
+    -webkit-app-region: no-drag;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.find-city-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    height: 60%;
+    width: 10%;
+    background-color: #3fb55f;
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+.find-city-button:hover{
+    transform: scale(1.05);
+    background-color: #308647;
+    cursor: pointer;
+}
+
+.weather-container{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 67%;
+}
+
+.today-weather-container, .air-pollution-container, .forecast-weather-container{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #29579f;
+    -webkit-app-region: drag;
+    user-select: none;
+}
+
+.air-pollution-label{
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.weather-icon-img, .air-pollution-icon-img{
+    margin-top: 10px;
+    display: flex;
+    width: 60%;
+}
+
+.today-weather-city{
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.today-weather-temperature{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.today-weather-feels-like-temperature{
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.today-weather-other-info-container, .air-pollution-other-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.air-pollution-other-info-container{
+    color: white;
+    font-size: 15px;
+}
+
+.today-weather-wind-speed, .today-weather-humidity-speed, .today-weather-sunrise, .today-weather-sunset {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.today-weather-wind-speed img, .today-weather-humidity-speed img, .today-weather-sunrise img, .today-weather-sunset img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.air-pollution-state-label{
+    color: red;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu-main-container, .moon-main-container, .day-of-cities-main-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    padding-top: 0px;
+    background-color: #29579f;
+    border-radius: 15px;
+    /*border-style: solid;
+    border-color: rgb(12, 2, 94);
+    border-width: 5px;*/
+    box-sizing: border-box;
+}
+
+.menu-button-exit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    max-height: 30px;
+    margin-top: 5px;
+    margin-bottom: 0px; 
+}
+
+.menu-button-exit img {
+    aspect-ratio: 1 / 1;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+    pointer-events: all;
+    -webkit-app-region: no-drag;
+}
+
+.menu-button-exit img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.menu-button-list{
+    display: flex;
+    background-color: #5380c9;
+    width: 100%;
+    min-height: 55px;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+    pointer-events: all;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+.menu-button-list label{
+    display: flex;
+    margin-left: 10px;
+    color: white;
+    font-size: 21px;
+    pointer-events: none;
+}
+
+.menu-button-list:hover{
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
+.moon-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 10px;
+    height: auto;
+    background-color: black;
+    background-color: #29579f;
+    border-radius: 15px;
+    transition: transform 0.3s ease;   
+    pointer-events: all;
+    -webkit-app-region: no-drag;
+    user-select: none;
+    
+}
+
+.moon-container:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.moon-date{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    max-height: 25%;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.moon-info{
+    margin-top: 5px;
+    color: white;
+    font-size: 17px;
+    border-style: solid;
+    border-color: #5380c9;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 15px;
+}
+
+.day-of-cities-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #29579f;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    pointer-events: all;
+    -webkit-app-region: no-drag;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.day-of-cities-container:hover{
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+.day-of-cities{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 100px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #5380c9;
+    margin-left: 5px;
+    margin-right: 5px;
+    pointer-events: none;
+}
+
+.day-of-citites-city-name{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.day-of-citites-date{
+    color:#3fb55f;
+    font-size: 14px;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.day-of-citites-info{
+    color: white;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    pointer-events: none;
+}
+
+.forecast-weather-container{
+    align-items: start;
+    text-align: center;
+    padding: 0px;
+}
+
+
+.forecast-weather-container label{
+    margin-top: 7px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.five-days-list-container{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.day-weather-main-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 20px;
+    max-height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-top: 10px;
+}
+
+.day-weather-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.day-weather-container img{
+    width: 40px;
+    margin-right: 10px;
+}
